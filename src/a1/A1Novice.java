@@ -9,7 +9,7 @@ public class A1Novice {
 		Scanner scan = new Scanner(System.in);
 				
 		// Input number of customers
-		System.out.println("Enter the total number of customers:  ");   // prompt for input
+		// System.out.println("Enter the total number of customers:  ");   // prompt for input
 		int numberOfCustomers = scan.nextInt();   // get int input
 		
 		// Initialize variables
@@ -22,13 +22,13 @@ public class A1Novice {
 		// Loop through each customer
 		for (int i = 0; i < numberOfCustomers; i++) {
 			
-			System.out.println("First name:  ");   // prompt for input
+			// System.out.println("First name:  ");   // prompt for input
 			firstNames[i] = scan.next();   // get String input
 			
-			System.out.println("Last name:  ");   // prompt for input
+			// System.out.println("Last name:  ");   // prompt for input
 			lastNames[i] = scan.next();   // get String input
 			
-			System.out.println("Number of items bought:  ");   // prompt for input
+			// System.out.println("Number of items bought:  ");   // prompt for input
 			numberOfItems[i] = scan.nextInt();   // get int input
 			
 			// Initialize variables
@@ -38,13 +38,13 @@ public class A1Novice {
 			
 			for (int j = 0; j < numberOfItems[i]; j++) {
 				
-				System.out.println("Item " + (j+1) + ", Quantity bought:  ");   // prompt for input
+				// System.out.println("Item " + (j+1) + ", Quantity bought:  ");   // prompt for input
 				itemQuantities[j] = scan.nextInt();   // get int input
 				
-				System.out.println("Item " + (j+1) + "Name of item:  ");   // prompt for input
+				// System.out.println("Item " + (j+1) + "Name of item:  ");   // prompt for input
 				itemNames[j] = scan.next();   // get String input
 				
-				System.out.println("Item " + (j+1) + "Price of item:  ");   // prompt for input
+				// System.out.println("Item " + (j+1) + "Price of item:  ");   // prompt for input
 				itemPrices[j] = scan.nextDouble();   // get double input
 				
 				totalCost[i] += itemQuantities[j] * itemPrices[j];
