@@ -21,7 +21,7 @@ public class A1Adept {
 		}
 		
 		int numberOfCustomers = scan.nextInt();
-		int averageSpent = 0;
+		double averageSpent = 0;
 		
 		String[] firstNames = new String[numberOfCustomers];
 		String[] lastNames = new String[numberOfCustomers];
