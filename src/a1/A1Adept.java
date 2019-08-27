@@ -55,10 +55,10 @@ public class A1Adept {
 		String averageSpentRounded = String.format("%.2f", averageSpent);
 		
 		System.out.println("Biggest: " + firstNames[getLargestIndex(totalCost)] + lastNames[getLargestIndex(totalCost)]
-						   + "(" + totalCostRounded[getLargestIndex(totalCost)] + ")");
+						   + " (" + totalCostRounded[getLargestIndex(totalCost)] + ")");
 		
 		System.out.println("Smallest: " + firstNames[getSmallestIndex(totalCost)] + lastNames[getSmallestIndex(totalCost)]
-				   		   + "(" + totalCostRounded[getSmallestIndex(totalCost)] + ")");
+				   		   + " (" + totalCostRounded[getSmallestIndex(totalCost)] + ")");
 		
 		System.out.println("Average: " + averageSpentRounded);
 		
