@@ -103,5 +103,4 @@ public class A1Adept {
 		
 		return j;
 	}
-	
 }
