@@ -43,7 +43,7 @@ public class A1Jedi {
 				boughtItemQuantities[j] = scan.nextInt();
 				boughtItemNames[j] = scan.next();
 				
-				numberOfItemInstances[i][getStringIndex(itemNames, boughtItemNames[j])] = boughtItemQuantities[j];
+				numberOfItemInstances[i][getStringIndex(itemNames, boughtItemNames[j])] += boughtItemQuantities[j];
 				
 			}
 						
