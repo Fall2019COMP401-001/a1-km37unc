@@ -132,7 +132,7 @@ public class A1Jedi {
 		
 		int count = 0;
 		
-		for (int i = 0; i < array[0].length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			if (array[i][column] > 0) {
 				count += 1;
 			}
