@@ -8,64 +8,71 @@ public class A1Jedi {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-
-		int numberOfItems = scan.nextInt();
 		
-		String[] itemNames = new String[numberOfItems];
-		double[] itemPrices = new double[numberOfItems];
+		int numberOfItems = scan.nextInt();   // get int input
 		
-		for (int i = 0; i < numberOfItems; i++) {
+		// Initialize variables
+		String[] itemNames = new String[numberOfItems];    // array of item names
+		double[] itemPrices = new double[numberOfItems];   // aray of item prices
+		
+		for (int i = 0; i < numberOfItems; i++) {   // for each item:
 			
-			itemNames[i] = scan.next();
-			itemPrices[i] = scan.nextDouble();
+			// Get inputs
+			itemNames[i] = scan.next();   // get String input
+			itemPrices[i] = scan.nextDouble();   // get double input
 			
 		}
 		
-		int numberOfCustomers = scan.nextInt();
+		int numberOfCustomers = scan.nextInt();   // get int input
 		
-		String[] firstNames = new String[numberOfCustomers];
-		String[] lastNames = new String[numberOfCustomers];
-		int[] boughtItems = new int[numberOfCustomers];
+		// Initialize variables
+		String[] firstNames = new String[numberOfCustomers];   // array of customer first names
+		String[] lastNames = new String[numberOfCustomers];	   // array of customer last names
+		int[] boughtItems = new int[numberOfCustomers];		   // array of number of items bought by customer
 		
-		int[][] numberOfItemInstances = new int[numberOfCustomers][numberOfItems];
+		int[][] numberOfItemInstances = new int[numberOfCustomers][numberOfItems];   // 2D array of number of items bought among all customers
 		
-		for (int i = 0; i < numberOfCustomers; i++) {
+		for (int i = 0; i < numberOfCustomers; i++) {   // for each customer:
 			
-			firstNames[i] = scan.next();
-			lastNames[i] = scan.next();
-			boughtItems[i] = scan.nextInt();
+			// Get inputs
+			firstNames[i] = scan.next();       // get String input
+			lastNames[i] = scan.next();   	   // get String input
+			boughtItems[i] = scan.nextInt();   // get int input
 			
+			// Initialize variables
 			int[] boughtItemQuantities = new int[boughtItems[i]];
 			String[] boughtItemNames = new String[boughtItems[i]];
 			
-			for (int j = 0; j < boughtItems[i]; j++) {
+			for (int j = 0; j < boughtItems[i]; j++) {   // for each item bought by customer:
 				
-				boughtItemQuantities[j] = scan.nextInt();
-				boughtItemNames[j] = scan.next();
+				// Get inputs
+				boughtItemQuantities[j] = scan.nextInt();   // get int input
+				boughtItemNames[j] = scan.next();   		// get String input
 				
-				numberOfItemInstances[i][getStringIndex(itemNames, boughtItemNames[j])] += boughtItemQuantities[j];
+				numberOfItemInstances[i][getStringIndex(itemNames, boughtItemNames[j])] += boughtItemQuantities[j];   // save number of items bought to the 2D array
 				
-			}
-						
+			}		
 		}
 		
-		for (int i = 0; i < numberOfItems; i++) {
+		for (int i = 0; i < numberOfItems; i++) {   // for each item:
 			
-			if (countItems(numberOfItemInstances, i) == 0) {
-				System.out.println("No customers bought " + itemNames[i]);
-			} else {
+			if (countItems(numberOfItemInstances, i) == 0) {   // if no instances of item:
+				System.out.println("No customers bought " + itemNames[i]);   // print output
 				
-				int itemOccurrenceCount = countItems(numberOfItemInstances, i);
-				int itemTotalCount = sumIntArrayColumn(numberOfItemInstances, i);
+			} else {   // if there are some number of instances of item:
 				
-				System.out.println(itemOccurrenceCount + " customers bought " + itemTotalCount + " " + itemNames[i]);
+				// Initialize variables
+				int itemOccurrenceCount = countItems(numberOfItemInstances, i);     // number of item instances among all customers
+				int itemTotalCount = sumIntArrayColumn(numberOfItemInstances, i);   // total number of item bought among all customers
+				
+				System.out.println(itemOccurrenceCount + " customers bought " + itemTotalCount + " " + itemNames[i]);   // print output
 			}
-			
 		}
 		
 		scan.close();
 	}
 	
+	// getStringIndex: get index location of a specific string in an array of strings
 	public static int getStringIndex(String[] array, String findString) {
 		
 		int j = 0;
@@ -79,6 +86,7 @@ public class A1Jedi {
 		return j;
 	}
 	
+	// getSmallestIndex: get index location of the smallest value in an array of doubles
 	public static int getSmallestIndex(double[] array) {
 		
 		int j = 0;
@@ -92,6 +100,7 @@ public class A1Jedi {
 		return j;
 	}
 	
+	// getLargestIndex: get index location of the largest value in an array of doubles
 	public static int getLargestIndex(double[] array) {
 		
 		int j = 0;
@@ -105,6 +114,7 @@ public class A1Jedi {
 		return j;
 	}
 	
+	// sumIntArray: sum integers in an array
 	public static int sumIntArray(int[] array) {
 		
 		int sum = 0;
@@ -116,6 +126,7 @@ public class A1Jedi {
 		return sum;
 	}
 	
+	// sumIntArrayColumn: sum integers of a specific column in a 2D array
 	public static int sumIntArrayColumn(int[][] array, int column) {
 		
 		int sum = 0;
@@ -127,7 +138,7 @@ public class A1Jedi {
 		return sum;
 	}
 
-
+	// countItems: number of instances of non-zero number in a specific column in a 2D array
 	public static int countItems(int[][] array, int column) {
 		
 		int count = 0;
@@ -139,7 +150,6 @@ public class A1Jedi {
 		}
 		
 		return count;
-		
 	}
 }
 

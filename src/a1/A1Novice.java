@@ -18,13 +18,11 @@ public class A1Novice {
 		double[] totalCost = new double[numberOfCustomers];    		 // array of total costs as doubles
 		String[] totalCostRounded = new String[numberOfCustomers];   // array of total costs as strings in 2 decimals
 		
-		// Loop through each customer
-		for (int i = 0; i < numberOfCustomers; i++) {
+		for (int i = 0; i < numberOfCustomers; i++) {   // for each customer:
 			
-			firstNames[i] = scan.next();   // get String input
-			
-			lastNames[i] = scan.next();   // get String input
-			
+			// Get inputs
+			firstNames[i] = scan.next();         // get String input
+			lastNames[i] = scan.next();          // get String input
 			numberOfItems[i] = scan.nextInt();   // get int input
 			
 			// Initialize variables
@@ -32,24 +30,23 @@ public class A1Novice {
 			String[] itemNames = new String[numberOfItems[i]];    // array of names of items
 			double[] itemPrices = new double[numberOfItems[i]];   // array of prices of items
 			
-			for (int j = 0; j < numberOfItems[i]; j++) {
+			for (int j = 0; j < numberOfItems[i]; j++) {   // for each item:
 				
+				// Get inputs
 				itemQuantities[j] = scan.nextInt();   // get int input
+				itemNames[j] = scan.next();           // get String input
+				itemPrices[j] = scan.nextDouble();    // get double input
 				
-				itemNames[j] = scan.next();   // get String input
-				
-				itemPrices[j] = scan.nextDouble();   // get double input
-				
-				totalCost[i] += itemQuantities[j] * itemPrices[j];
+				totalCost[i] += itemQuantities[j] * itemPrices[j];   // compute total spent by customer
 				
 			}
 			
-			totalCostRounded[i] = String.format("%.2f", totalCost[i]);
+			totalCostRounded[i] = String.format("%.2f", totalCost[i]);   // round total cost to 2 decimals
 			
 		}
 		
-		for (int i = 0; i < numberOfCustomers; i++) {
-			System.out.println(firstNames[i].charAt(0) + ". " + lastNames[i] + ": " + totalCostRounded[i]);
+		for (int i = 0; i < numberOfCustomers; i++) {   // for each customer:
+			System.out.println(firstNames[i].charAt(0) + ". " + lastNames[i] + ": " + totalCostRounded[i]);   // print total cost
 		}
 		
 		scan.close();
